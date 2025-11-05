@@ -35,6 +35,7 @@ function loadContent () {
 
     let qtyElements = document.querySelectorAll('.cart-quantity');
     qtyElements.forEach((input) => {
+        input.addEventListener('input', changeQty)
         input.addEventListener('change', changeQty)
     })
 
@@ -103,7 +104,7 @@ function createCartProduct(title,price,imgSrc) {
                         <div class="cart-price">${price}</div>
                     <div class="cart-amt">${price}</div>
                 </div>
-                <input class="cart-quantity" type="number" value="1" >
+                <input class="cart-quantity" type="number" value="1" min="1" inputmode="numeric" pattern="[0-9]*">
                 </div>
                 <ion-icon class="cart-remove" name="trash"></ion-icon>
             </div>
